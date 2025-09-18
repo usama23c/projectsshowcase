@@ -1,22 +1,25 @@
 import React, { useEffect } from 'react';
 
+// Hero Component with improved particles
 const Hero = () => {
   useEffect(() => {
-    // Create particles
     const createParticles = () => {
       const particlesContainer = document.getElementById('particles');
+      particlesContainer.innerHTML = '';
+      
       const particleCount = 50;
+      const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9c74f'];
      
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
        
-        // Random properties
         const size = Math.random() * 10 + 2;
         const posX = Math.random() * 100;
         const posY = Math.random() * 100;
         const delay = Math.random() * 10;
         const duration = Math.random() * 10 + 10;
+        const color = colors[Math.floor(Math.random() * colors.length)];
        
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
@@ -24,12 +27,16 @@ const Hero = () => {
         particle.style.top = `${posY}%`;
         particle.style.animationDelay = `${delay}s`;
         particle.style.animationDuration = `${duration}s`;
+        particle.style.background = color;
        
         particlesContainer.appendChild(particle);
       }
     };
    
     createParticles();
+    window.addEventListener('resize', createParticles);
+    
+    return () => window.removeEventListener('resize', createParticles);
   }, []);
 
   return (
@@ -61,5 +68,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;
