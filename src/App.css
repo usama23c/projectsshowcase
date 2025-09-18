@@ -7,7 +7,28 @@
   --card-bg: #f0f0f0;
   --accent-color: #c10085;
 }
+.nav-links a.active {
+  color: var(--primary-color);
+}
 
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Mobile responsiveness for header */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .header-btns .btn {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block !important;
+  }
+}
 /* Header Styles */
 header {
   position: fixed;
