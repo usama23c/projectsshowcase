@@ -1108,3 +1108,251 @@ footer {
 .stat-number {
   animation: countUp 1s ease-out forwards;
 }
+/* About Section Styles */
+.about-content {
+  max-width: 100%;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.about-text-container {
+  padding-right: 30px;
+}
+
+.about-text {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.image-background {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.stats-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.social-section {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  transition: all var(--transition-fast);
+  min-width: 120px;
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-color);
+  color: #000;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.social-link:hover .social-icon {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Section Header Styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.divider-line {
+  height: 2px;
+  width: 50px;
+  background-color: var(--primary-color);
+}
+
+.divider-icon {
+  margin: 0 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.section-subtitle {
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .about-text-container {
+    padding-right: 0;
+    order: 2;
+  }
+  
+  .about-image {
+    order: 1;
+  }
+  
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 15px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    gap: 10px;
+  }
+  
+  .social-link {
+    min-width: 100px;
+    padding: 12px 15px;
+  }
+  
+  .image-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .profile-image {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  
+  .social-link {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .stats-container {
+    gap: 15px;
+  }
+  
+  .stat-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
